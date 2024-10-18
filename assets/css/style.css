@@ -8,7 +8,7 @@
   --color-white: #e2e2e2; /* Putih keabu-abuan yang lembut untuk mengurangi kontras yang terlalu tajam */
 
   /* Text Colors */
-  --text-color-second: #8c8c8c; /* Abu-abu terang untuk teks sekunder, jelas namun tetap elegan */
+  --text-color-second: #686868; /* Abu-abu terang untuk teks sekunder, jelas namun tetap elegan */
   --text-color-third: #32a6b3; /* Biru tegas untuk heading atau elemen penting, memberikan kesan formal dan berwibawa */
 
   /* Primary Button & Link Colors */
@@ -22,9 +22,9 @@
   /* Shadow and Hover Effects */
   --first-shadow-color: rgba(
     255,
-    255,
-    255,
-    0.1
+    195,
+    195,
+    0.993
   ); /* Shadow putih lembut untuk menambah kedalaman */
   --second-shadow-color: rgba(
     0,
@@ -32,6 +32,10 @@
     0,
     0.7
   ); /* Shadow hitam pekat untuk mempertegas elemen visual */
+}
+/* Kelas khusus untuk mengubah warna paragraf */
+.highlight-paragraph {
+  color: #fffefe; /* Ubah warna menjadi oranye atau sesuai keinginan */
 }
 
 /* ----- BASE ----- */
@@ -301,6 +305,18 @@ nav {
 .col {
   display: flex;
   width: 50%;
+}
+/* Mengubah warna teks di dalam content-container menjadi putih */
+.content-container {
+  color: white; /* Mengatur warna teks menjadi putih */
+}
+
+/* Jika ada elemen lain di dalam container yang perlu diatur */
+.content-container h1,
+.content-container h2,
+.content-container h3,
+.content-container p {
+  color: white; /* Mengatur warna heading dan paragraf menjadi putih */
 }
 
 /* -- ## --- RESUABLE CSS -- ## -- */
