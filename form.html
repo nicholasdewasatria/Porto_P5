@@ -1,92 +1,92 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Form</title>
-    <!-- Menambahkan style CSS untuk tampilan form -->
-    <style>
-      /* Pengaturan tampilan body agar form berada di tengah halaman */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-
-      /* Pengaturan container form login */
-      .login-container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Pengaturan judul form */
-      .login-container h2 {
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      /* Pengaturan input text dan password */
-      .login-container input[type="text"],
-      .login-container input[type="password"] {
-        width: 100%; /* Lebar input 100% dari parent container */
-        padding: 10px; /* Padding dalam input */
-        margin: 10px 0; /* Jarak antar input */
-        border: 1px solid #ccc; /* Border abu-abu pada input */
-        border-radius: 4px; /* Membuat sudut input melengkung */
-      }
-
-      /* Pengaturan tombol submit dan reset */
-      .login-container input[type="submit"],
-      .login-container input[type="reset"] {
-        width: 48%; /* Lebar tombol menjadi 48% agar dua tombol bisa berada dalam satu baris */
-        padding: 10px;
-        border: none; /* Menghilangkan border default pada tombol */
-        border-radius: 4px; /* Membuat sudut tombol melengkung */
-        background-color: #4caf50; /* Warna latar tombol submit hijau */
-        color: white; /* Warna teks tombol putih */
-        cursor: pointer; /* Menampilkan pointer saat tombol di-hover */
-        margin-top: 10px;
-      }
-
-      /* Pengaturan warna tombol reset (warna merah) */
-      .login-container input[type="reset"] {
-        background-color: #f44336;
-      }
-
-      /* Efek hover saat tombol diklik */
-      .login-container input[type="submit"]:hover,
-      .login-container input[type="reset"]:hover {
-        opacity: 0.9; /* Mengubah transparansi saat hover */
-      }
-    </style>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sign up |</title>
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/auth.css" rel="stylesheet" />
   </head>
+
   <body>
-    <!-- Container utama untuk form login -->
-    <div class="login-container">
-      <h2>Login</h2>
-      <!-- Form login, method POST digunakan untuk mengirim data secara aman -->
-      <form action="/login" method="POST">
-        <!-- Input username -->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
-        <!-- Input password -->
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-        <!-- Tombol submit dan reset -->
-        <div style="display: flex; justify-content: space-between">
-          <input type="submit" value="Login" />
-          <!-- Tombol submit untuk login -->
-          <input type="reset" value="Reset" />
-          <input type="submit" value="Register" />
-          <!-- Tombol reset untuk mengosongkan input -->
+    <div class="wrapper">
+      <div class="auth-content">
+        <div class="card">
+          <div class="card-body text-center">
+            <div class="mb-4">
+              <!-- <img
+                class="brand"
+                src="assets/img/bootstraper-logo.png"
+                alt="bootstraper logo"
+              /> -->
+            </div>
+            <h6 class="mb-4 text-muted">Create new account</h6>
+            <form action="" method="">
+              <div class="mb-3 text-start">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Name"
+                  required
+                />
+              </div>
+              <div class="mb-3 text-start">
+                <label for="email" class="form-label">Email adress</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter Email"
+                  required
+                />
+              </div>
+              <div class="mb-3 text-start">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <!-- 
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Confirm password" required>
+                        </div> 
+                        -->
+              <div class="mb-3 text-start">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    name="confirm"
+                    type="checkbox"
+                    value=""
+                    id="check1"
+                  />
+                  <label class="form-check-label" for="check1">
+                    I agree to the
+                    <a href="#" tabindex="-1">terms and policy</a>.
+                  </label>
+                </div>
+              </div>
+              <button class="btn btn-primary shadow-2 mb-4">Register</button>
+            </form>
+            <p class="mb-0 text-muted">
+              Allready have an account? <a href="login.html">Log in</a>
+            </p>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
