@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial membuat tabel</title>
+    <style>
+      /* Styling untuk tabel */
+      table {
+        width: 100%;
+        border-collapse: collapse; /* Menggabungkan border antara sel */
+      }
+      th,
+      td {
+        border: 1px solid rgb(253, 0, 0); /* Menambahkan border pada setiap sel */
+        padding: 8px;
+        text-align: left; /* Menyelaraskan teks ke kiri */
+      }
+      th {
+        background-color: #554fff; /* Memberi warna latar pada header tabel */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Tutorial membuat table HTML</h2>
+
+    <!-- Membuat tabel sederhana -->
+    <table>
+      <thead>
+        <tr>
+          <!-- Header tabel: menggunakan <th> -->
+          <th>First Name</th>
+          <!-- Baris header untuk kolom 'First Name' -->
+          <th>Last Name</th>
+          <!-- Baris header untuk kolom 'Last Name' -->
+          <th>Umur</th>
+          <th>Alamat</th>
+          <!-- Baris header untuk kolom 'Age' -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- Isi tabel: menggunakan <td> -->
+          <td>Nicholas</td>
+          <!-- Baris pertama untuk kolom 'First Name' -->
+          <td>Satria</td>
+          <!-- Baris pertama untuk kolom 'Last Name' -->
+          <td>22</td>
+
+          <!-- Baris pertama untuk kolom 'Age' -->
+        </tr>
+        <tr>
+          <td>Kane</td>
+          <!-- Baris kedua untuk kolom 'First Name' -->
+          <td>Harry</td>
+          <!-- Baris kedua untuk kolom 'Last Name' -->
+          <td>30</td>
+          <!-- Baris kedua untuk kolom 'Age' -->
+        </tr>
+        <tr>
+          <td>Kai</td>
+          <!-- Baris ketiga untuk kolom 'First Name' -->
+          <td></td>
+          <!-- Baris ketiga untuk kolom 'Last Name' -->
+          <td>40</td>
+          <!-- Baris ketiga untuk kolom 'Age' -->
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
