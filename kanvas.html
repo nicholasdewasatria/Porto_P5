@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menggambar Gambar di Canvas</title>
+    <style>
+      /* Menambahkan border pada elemen canvas agar terlihat */
+      canvas {
+        border: 1px solid #d3d3d3;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Pilih gambar:</p>
+    <!-- Elemen gambar yang sumbernya akan ditentukan -->
+    <img
+      id="gambar"
+      src="assets/images/MESSI2.jpg"
+      alt="Gambar"
+      width="220"
+      height="277"
+    />
+
+    <!-- Elemen canvas tempat gambar akan digambar -->
+    <canvas id="kanvas" width="220" height="277"></canvas>
+
+    <!-- Tombol untuk menjalankan fungsi menggambar -->
+    <p><button onclick="kanvas()">Try it!</button></p>
+
+    <script>
+      /* Fungsi untuk menggambar gambar ke dalam canvas */
+      function kanvas() {
+        // Mendapatkan elemen canvas
+        var c = document.getElementById("kanvas");
+
+        // Mendapatkan konteks 2D dari canvas, diperlukan untuk menggambar
+        var ctx = c.getContext("2d");
+
+        // Mendapatkan elemen gambar berdasarkan ID-nya
+        var img = document.getElementById("gambar");
+
+        // Menggambar gambar ke dalam canvas pada koordinat (10, 10)
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+      }
+    </script>
+  </body>
+</html>

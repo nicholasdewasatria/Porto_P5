@@ -10,7 +10,7 @@
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f0f4f8;
+        background-color: #5f6366;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -75,76 +75,93 @@
   </head>
   <body>
     <div class="container">
+      <!-- Menampilkan judul halaman web -->
       <h1>Get User Location with Geolocation API</h1>
+
+      <!-- Tombol untuk mendapatkan lokasi pengguna dengan memanggil fungsi getLocation saat diklik -->
       <button onclick="getLocation()">Get Location</button>
 
+      <!-- Div yang menampilkan informasi lokasi pengguna, disembunyikan pada awalnya -->
       <div id="location">
         <h3>Your Location:</h3>
+        <!-- Menampilkan latitude dari lokasi pengguna -->
         <p>Latitude: <span id="latitude"></span></p>
+        <!-- Menampilkan longitude dari lokasi pengguna -->
         <p>Longitude: <span id="longitude"></span></p>
+        <!-- Menampilkan tingkat akurasi dalam meter -->
         <p>Accuracy: <span id="accuracy"></span> meters</p>
       </div>
     </div>
 
     <script>
-      // Function to get user location
+      // Fungsi untuk mendapatkan lokasi pengguna
       function getLocation() {
         const locationBox = document.getElementById("location");
+
+        // Mengecek apakah browser mendukung Geolocation API
         if (navigator.geolocation) {
+          // Jika mendukung, memanggil fungsi untuk mendapatkan lokasi pengguna
           navigator.geolocation.getCurrentPosition(showPosition, showError);
         } else {
+          // Jika tidak mendukung, tampilkan pesan peringatan
           alert("Geolocation is not supported by this browser.");
         }
 
-        // Add loading effect to the button
+        // Menambahkan efek loading pada tombol
         const button = document.querySelector("button");
-        button.innerHTML = "Getting Location...";
-        button.disabled = true;
-        button.style.backgroundColor = "#ccc";
+        button.innerHTML = "Getting Location..."; // Mengubah teks tombol
+        button.disabled = true; // Menonaktifkan tombol saat proses berjalan
+        button.style.backgroundColor = "#ccc"; // Mengubah warna tombol saat loading
       }
 
-      // Function to display position
+      // Fungsi untuk menampilkan posisi pengguna
       function showPosition(position) {
+        // Menampilkan latitude pengguna di elemen dengan id 'latitude'
         document.getElementById("latitude").innerHTML =
           position.coords.latitude;
+
+        // Menampilkan longitude pengguna di elemen dengan id 'longitude'
         document.getElementById("longitude").innerHTML =
           position.coords.longitude;
+
+        // Menampilkan akurasi lokasi dalam meter di elemen dengan id 'accuracy'
         document.getElementById("accuracy").innerHTML =
           position.coords.accuracy + " meters";
 
-        // Show the location div
+        // Menampilkan div 'location' setelah lokasi berhasil diambil
         const locationBox = document.getElementById("location");
-        locationBox.style.display = "block";
+        locationBox.style.display = "block"; // Memunculkan div yang sebelumnya tersembunyi
 
-        // Revert button state
+        // Mengembalikan tombol ke keadaan semula setelah lokasi ditampilkan
         const button = document.querySelector("button");
-        button.innerHTML = "Get Location";
-        button.disabled = false;
-        button.style.backgroundColor = "#007bff";
+        button.innerHTML = "Get Location"; // Mengubah teks tombol kembali
+        button.disabled = false; // Mengaktifkan kembali tombol
+        button.style.backgroundColor = "#007bff"; // Mengubah warna tombol kembali ke biru
       }
 
-      // Function to handle errors
+      // Fungsi untuk menangani kesalahan saat mendapatkan lokasi
       function showError(error) {
+        // Menggunakan switch untuk berbagai kode kesalahan yang mungkin terjadi
         switch (error.code) {
           case error.PERMISSION_DENIED:
-            alert("User denied the request for Geolocation.");
+            alert("User denied the request for Geolocation."); // Jika pengguna menolak permintaan
             break;
           case error.POSITION_UNAVAILABLE:
-            alert("Location information is unavailable.");
+            alert("Location information is unavailable."); // Jika lokasi tidak tersedia
             break;
           case error.TIMEOUT:
-            alert("The request to get user location timed out.");
+            alert("The request to get user location timed out."); // Jika proses memakan waktu terlalu lama
             break;
           case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.");
+            alert("An unknown error occurred."); // Jika ada kesalahan tak dikenal
             break;
         }
 
-        // Revert button state even in case of an error
+        // Mengembalikan tombol ke keadaan semula meskipun terjadi kesalahan
         const button = document.querySelector("button");
-        button.innerHTML = "Get Location";
-        button.disabled = false;
-        button.style.backgroundColor = "#007bff";
+        button.innerHTML = "Get Location"; // Mengubah teks tombol kembali
+        button.disabled = false; // Mengaktifkan kembali tombol
+        button.style.backgroundColor = "#007bff"; // Mengubah warna tombol kembali ke biru
       }
     </script>
   </body>
